@@ -41,8 +41,7 @@ namespace BlogSystem.Model
             var redisBlogPosts = redis.As<BlogPost>();
             return redisBlogPosts.Lists[RecentBlogPostsKey].GetAll();
         }
-
-        
+  
         public List<BlogPostComment> GetRecentBlogPostComments()
         {
             var redisComments = redis.As<BlogPostComment>();
@@ -95,8 +94,6 @@ namespace BlogSystem.Model
                 redisBlogs.GetByIds(blogIds.Map(x => x.ToString())));
         }
 
-
-
         public List<BlogPost> GetBlogPosts(IEnumerable<long> blogPostIds)
         {
             var redisBlogPosts = redis.As<BlogPost>();
@@ -148,10 +145,6 @@ namespace BlogSystem.Model
             }
         }
 
-
-
-
-      
         public IDictionary<string, double> GetTopTags(int take)
         {
             return redis.GetRangeWithScoresFromSortedSetDesc(TagCloudKey, 0, take - 1);
@@ -171,7 +164,6 @@ namespace BlogSystem.Model
         {
             return redis.GetById<BlogPost>(postId);
         }
-
 
         public List<BlogPost> GetBlogPostByCategry(string categoryName)
         {

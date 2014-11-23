@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\RefAssembly\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Common">
       <HintPath>..\RefAssembly\ServiceStack.Common.dll</HintPath>
     </Reference>
@@ -51,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogPostTest.cs" />
     <Compile Include="IBlogRepository.cs" />
     <Compile Include="IHasBlogRepository.cs" />
     <Compile Include="Model\Blog.cs" />
