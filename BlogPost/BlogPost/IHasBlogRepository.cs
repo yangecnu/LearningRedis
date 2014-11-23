@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BlogPost
+namespace BlogSystem
 {
-    public class Class1
+    public interface IHasBlogRepository
     {
+        IBlogRepository Repository { set; }
     }
+
 }
